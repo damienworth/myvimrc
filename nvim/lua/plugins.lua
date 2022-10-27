@@ -72,6 +72,7 @@ require('packer').startup(function()
         }
     }
 
+    -- cpp
     dap.configurations.cpp = {
         {
             name = "Launch",       -- a user readable name for the configuration
@@ -92,6 +93,10 @@ require('packer').startup(function()
     }
     dap.configurations.c = dap.configurations.cpp
     dap.configurations.rust = dap.configurations.cpp
+
+    -- python
+    local pyright = require('lspconfig').pyright
+    pyright.setup{}
 
     -- remapping
     use 'folke/which-key.nvim'
